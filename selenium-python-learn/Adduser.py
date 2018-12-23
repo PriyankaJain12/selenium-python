@@ -1,0 +1,26 @@
+from selenium import webdriver
+
+class Adduser:
+	dr=webdriver.Chrome("C:\\Selenium\\chromedriver.exe")
+	dr.get("http://127.0.0.1/orangehrm-3.3.1/symfony/web/index.php/auth/login")
+	Username=dr.find_element_by_id("txtUsername")
+	Username.send_keys("admin")
+	password=dr.find_element_by_id("txtPassword")
+	password.send_keys("admin")
+	login=dr.find_element_by_id("btnLogin")
+	login.click()
+	Adminpage=dr.find_element_by_id("menu_admin_viewAdminModule")
+	Adminpage.click()
+	Addbutton=dr.find_element_by_id("btnAdd")
+	Addbutton.click()
+	Empname=dr.find_element_by_id("systemUser_employeeName_empName")
+	Empname.send_keys("Priyanka Jain")
+	UserName=dr.find_element_by_id("systemUser_userName")
+	UserName.send_keys("Ankita")
+	Userpassword=dr.find_element_by_id("systemUser_password")
+	Userpassword.send_keys("Mukka1214")
+	ConfirmPass=dr.find_element_by_id("systemUser_confirmPassword")
+	ConfirmPass.send_keys("Mukka1214")
+	Save=dr.find_element_by_id("btnSave")
+	Save.click()
+
